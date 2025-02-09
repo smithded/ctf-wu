@@ -1,5 +1,5 @@
 # PointerOverFlow CTF 2024
-Cette compétition a durée _18 semaines_ où on a eu droit à _90 challenges_ répartient dans ces catégories: 
+Cette compétition a durée _18 semaines_ : 15 septembre 2024 au 19 janvier 2025, où on a eu droit à _90 challenges_ répartient dans ces catégories: 
 + Crack
 + Crypto
 + Exploit (binary exploitation)
