@@ -1,4 +1,5 @@
 # PointerOverFlow CTF 2024
+![PointerOverflow CTF banner](img/poctf_logo.webp)
 This competition lasted 18 weeks: September 15, 2024 to January 19, 2025, where we were entitled to 90 challenges divided into these categories: 
 * Crack
 * Crypto
