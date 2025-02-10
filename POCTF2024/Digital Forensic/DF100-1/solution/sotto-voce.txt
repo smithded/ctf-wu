@@ -1,0 +1,4 @@
+P-O-C-T-F, left curly bracket, U-W-S-P underscore, 5-7-R, 4-N-6-3-R underscore, 1-N underscore,
+4- underscore, 5-7-R, 4-N-6-3 underscore, 1-4-N-D, right curly bracket.
+
+poctf{uwsp_57r4n63r_1n_4_57r4n63_14nd}
