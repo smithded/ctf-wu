@@ -1,0 +1,145 @@
+//Binary ninja
+void _init()
+{
+    if (__gmon_start__ != 0)
+        __gmon_start__();
+}
+
+int64_t sub_401020()
+{
+    int64_t var_8 = data_403ff0;
+    /* jump -> data_403ff8 */
+}
+
+int32_t putchar(int32_t c)
+{
+    /* tailcall */
+    return putchar(c);
+}
+
+int64_t sub_401036()
+{
+    int64_t var_8 = 0;
+    /* tailcall */
+    return sub_401020();
+}
+
+uint64_t strlen(char const* arg1)
+{
+    /* tailcall */
+    return strlen(arg1);
+}
+
+int64_t sub_401046()
+{
+    int64_t var_8 = 1;
+    /* tailcall */
+    return sub_401020();
+}
+
+int32_t printf(char const* format, ...)
+{
+    /* tailcall */
+    return printf();
+}
+
+int64_t sub_401056()
+{
+    int64_t var_8 = 2;
+    /* tailcall */
+    return sub_401020();
+}
+
+void _start(int64_t arg1, int64_t arg2, void (* arg3)()) __noreturn
+{
+    int64_t stack_end_1;
+    int64_t stack_end = stack_end_1;
+    __libc_start_main(main, __return_addr, &ubp_av, nullptr, nullptr, arg3, &stack_end);
+    /* no return */
+}
+
+int64_t _dl_relocate_static_pie() __pure
+{
+    return;
+}
+
+void deregister_tm_clones()
+{
+    return;
+}
+
+void register_tm_clones()
+{
+    return;
+}
+
+void __do_global_dtors_aux()
+{
+    if (__TMC_END__ != 0)
+        return;
+    
+    deregister_tm_clones();
+    __TMC_END__ = 1;
+}
+
+void frame_dummy()
+{
+    /* tailcall */
+    return register_tm_clones();
+}
+
+uint64_t obfuscate(char* arg1)
+{
+    int32_t var_1c = 0;
+    uint64_t result;
+    
+    while (true)
+    {
+        result = strlen(arg1);
+        
+        if (var_1c >= result)
+            break;
+        
+        arg1[var_1c] ^= 0x5a;
+        arg1[var_1c] += 3;
+        var_1c += 1;
+    }
+    
+    return result;
+}
+
+void deobfuscate()
+{
+    int64_t rdi;
+    int64_t var_50 = rdi;
+    int64_t var_48;
+    __builtin_strcpy(&var_48, "2d383c313f2432302c2d08710870356e376f086d3f083b6c713270262a");
+}
+
+int64_t print_obfuscated_flag()
+{
+    int64_t var_27;
+    __builtin_strcpy(&var_27, "*REDACTED*");
+    obfuscate(&var_27);
+    printf("Obfuscated Flag (Hex): ");
+    int32_t var_1c = 0;
+    
+    while (var_1c < strlen(&var_27))
+    {
+        printf("%02x ", *(&var_27 + var_1c));
+        var_1c += 1;
+    }
+    
+    return putchar(0xa);
+}
+
+int32_t main(int32_t argc, char** argv, char** envp)
+{
+    print_obfuscated_flag();
+    return 0;
+}
+
+int64_t _fini() __pure
+{
+    return;
+}

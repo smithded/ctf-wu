@@ -1,0 +1,180 @@
+void _init()
+{
+    if (__gmon_start__)
+        __gmon_start__();
+}
+
+int64_t sub_401020()
+{
+    int64_t var_8 = data_403ff0;
+    /* jump -> data_403ff8 */
+}
+
+char* strncpy(char* arg1, char const* arg2, uint64_t arg3)
+{
+    /* tailcall */
+    return strncpy(arg1, arg2, arg3);
+}
+
+int64_t sub_401036()
+{
+    int64_t var_8 = 0;
+    /* tailcall */
+    return sub_401020();
+}
+
+int32_t puts(char const* str)
+{
+    /* tailcall */
+    return puts(str);
+}
+
+int64_t sub_401046()
+{
+    int64_t var_8 = 1;
+    /* tailcall */
+    return sub_401020();
+}
+
+uint64_t strlen(char const* arg1)
+{
+    /* tailcall */
+    return strlen(arg1);
+}
+
+int64_t sub_401056()
+{
+    int64_t var_8 = 2;
+    /* tailcall */
+    return sub_401020();
+}
+
+int32_t printf(char const* format, ...)
+{
+    /* tailcall */
+    return printf();
+}
+
+int64_t sub_401066()
+{
+    int64_t var_8 = 3;
+    /* tailcall */
+    return sub_401020();
+}
+
+int32_t strcmp(char const* arg1, char const* arg2)
+{
+    /* tailcall */
+    return strcmp(arg1, arg2);
+}
+
+int64_t sub_401076()
+{
+    int64_t var_8 = 4;
+    /* tailcall */
+    return sub_401020();
+}
+
+int32_t __isoc99_scanf(char const* format, ...)
+{
+    /* tailcall */
+    return __isoc99_scanf();
+}
+
+int64_t sub_401086()
+{
+    int64_t var_8 = 5;
+    /* tailcall */
+    return sub_401020();
+}
+
+void _start(int64_t arg1, int64_t arg2, void (* arg3)()) __noreturn
+{
+    int64_t stack_end_1;
+    int64_t stack_end = stack_end_1;
+    __libc_start_main(main, __return_addr, &ubp_av, nullptr, nullptr, arg3, &stack_end);
+    /* no return */
+}
+
+int64_t _dl_relocate_static_pie() __pure
+{
+    return;
+}
+
+void deregister_tm_clones()
+{
+    return;
+}
+
+void register_tm_clones()
+{
+    return;
+}
+
+void __do_global_dtors_aux()
+{
+    if (__TMC_END__)
+        return;
+    
+    deregister_tm_clones();
+    __TMC_END__ = 1;
+}
+
+void frame_dummy()
+{
+    /* tailcall */
+    return register_tm_clones();
+}
+
+int64_t scramble_memory(void* arg1, int32_t arg2)
+{
+    for (int32_t i = 0; i < arg2 - 1; i += 2)
+    {
+        char* rax_3 = arg1 + i;
+        char rax_5 = *rax_3;
+        *rax_3 = rax_3[1];
+        rax_3[1] = rax_5;
+    }
+    
+    return arg2 - 1;
+}
+
+uint64_t check_input(char* arg1)
+{
+    int64_t var_13;
+    __builtin_strcpy(&var_13, "*REDACTED*");
+    void var_38;
+    strncpy(&var_38, &var_13, strlen(&var_13) + 1);
+    scramble_memory(&var_38, strlen(&var_38));
+    int32_t rax_2;
+    rax_2 = !strcmp(&var_38, arg1);
+    return rax_2;
+}
+
+int64_t reveal_flag()
+{
+    return puts("Correct!");
+}
+
+int32_t main(int32_t argc, char** argv, char** envp)
+{
+    int64_t var_48;
+    __builtin_strcpy(&var_48, "optc{fwups1_4__mh7_3c043}n");
+    printf("Enter the correct input: ", argv, 0x6e7d3334306333);
+    void var_28;
+    __isoc99_scanf("%29s", &var_28);
+    
+    if (!check_input(&var_28))
+        puts("Incorrect input! Try again.");
+    else
+        reveal_flag();
+    
+    return 0;
+}
+
+int64_t _fini() __pure
+{
+    return;
+}
+
+

@@ -1,0 +1,115 @@
+
+
+
+
+long sub_401020() {/* jump -> undetermined */}
+
+
+
+long sub_401036() {
+    return sub_401020();
+}
+
+
+
+long sub_401046() {
+    return sub_401020();
+}
+
+
+
+long sub_401056() {
+    return sub_401020();
+}
+
+
+
+long sub_401066() {
+    return sub_401020();
+}
+
+
+
+long sub_401076() {
+    return sub_401020();
+}
+
+
+
+long sub_401086() {
+    return sub_401020();
+}
+
+
+
+long _dl_relocate_static_pie() {
+    return;
+}
+
+
+
+long scramble_memory(void * arg1, int arg2) {
+    int var_0;
+    int var_1;
+    void * var_2;
+    void * var_3;
+    char * var_4;
+    var_0 = 0;
+    while (true) {
+        var_1 = arg2 - 1;
+        if (var_0 >= var_1) {
+            break;
+        }
+        var_3 = arg1 + var_0;
+        var_4 = *var_3;
+        var_2 = var_3 + 1L;
+        *var_3 = *var_2;
+        *var_2 = var_4;
+        var_0 += 2;
+    }
+    return var_1;
+}
+
+
+
+unsigned long check_input(char * arg1) {
+    void var_1;
+    int var_2;
+    unsigned long var_3;
+    long var_0;
+    __builtin_strcpy(/* dest */ &var_0, /* src */ "*REDACTED*");
+    var_3 = strlen(&var_0);
+    strncpy(&var_1, &var_0, var_3 + 1L);
+    var_2 = strlen(&var_1);
+    scramble_memory(&var_1, var_2);
+    var_2 = strcmp(&var_1, arg1);
+    return (unsigned char)(var_2 == 0);
+}
+
+
+
+long reveal_flag() {
+    long var_1;
+    var_1 = puts(/* str */ "Correct!");
+    return var_1;
+}
+
+
+
+int main(int argc, char ** argv, char ** envp) {
+    void var_7;
+    int var_8;
+    long var_0;
+    __builtin_strcpy(/* dest */ &var_0, /* src */ "optc{fwups1_4__mh7_3c043}n");
+    printf(/* format */ "Enter the correct input: ", argv, 0x6e7d3334306333);
+    __isoc99_scanf(/* format */ "%29s", &var_7);
+    var_8 = check_input(&var_7);
+    if (var_8 != 0) {
+        reveal_flag();
+    }
+    else {
+        puts(/* str */ "Incorrect input! Try again.");
+    }
+    return 0;
+}
+
